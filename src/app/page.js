@@ -25,8 +25,6 @@ function Home() {
       throw error;
     }
   };
-  //#1. call back function of useEffect hook cannot be async function
-  // but we can call that function inside the CB function of useEffect hook
   useEffect(() => {
     doFetching();
   }, []);
@@ -39,7 +37,6 @@ function Home() {
         </div>
       ) : loading ? (
         <div className="flex items-center justify-center w-full h-screen">
-          {/* #2. We can use react-spinners library to use spinners while fetching data */}
           <RingLoader color="#36d7b7" size={150} />
         </div>
       ) : (
@@ -65,7 +62,6 @@ function Home() {
                           width={200}
                           src={item?.picture?.large}
                           alt={`${item?.picture?.large}-pic`}
-                          // className="w-[50%]"
                         />
                         <div>
                           <div className="flex gap-2">
